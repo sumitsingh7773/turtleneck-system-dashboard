@@ -1,0 +1,283 @@
+/* RESET */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: #f4f6f9;
+  color: #1e293b;
+}
+
+/* LAYOUT */
+.container {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* SIDEBAR */
+.sidebar {
+  width: 220px;
+  background: #1e293b;
+  color: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+}
+
+.sidebar h2 {
+  margin-bottom: 25px;
+  font-size: 18px;
+}
+
+/* SIDEBAR BUTTONS */
+.sidebar button {
+  width: 100%;
+  margin: 8px 0;
+  padding: 10px;
+  background: #334155;
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 6px;
+  text-align: left;
+  transition: 0.2s ease;
+}
+
+.sidebar button:hover {
+  background: #475569;
+  transform: translateX(3px);
+}
+
+/* MAIN */
+.main {
+  flex: 1;
+  padding: 20px;
+  overflow-x: hidden;
+}
+
+/* HEADER */
+.header-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo {
+  height: 42px;
+  object-fit: contain;
+}
+
+/* CARDS */
+.cards {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.card {
+  flex: 1;
+  min-width: 220px;
+  background: white;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  transition: 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+}
+
+/* KPI */
+.kpi {
+  text-align: center;
+}
+
+.kpi h2 {
+  margin: 5px 0;
+}
+
+.kpi.blue { border-left: 5px solid #3b82f6; }
+.kpi.green { border-left: 5px solid #22c55e; }
+.kpi.red { border-left: 5px solid #ef4444; }
+
+/* CHARTS */
+.charts {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin: 20px 0;
+}
+
+.charts .card {
+  min-width: 300px;
+}
+
+/* FILTERS */
+.card.flex {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.card.flex input,
+.card.flex select {
+  flex: 1;
+  min-width: 150px;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  outline: none;
+}
+
+.card.flex input:focus,
+.card.flex select:focus {
+  border-color: #2563eb;
+}
+
+/* TABLE WRAPPER */
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+/* TABLE */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  min-width: 700px;
+}
+
+th {
+  background: #1e293b;
+  color: white;
+  padding: 10px;
+  text-align: left;
+  font-size: 13px;
+}
+
+td {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+  font-size: 13px;
+}
+
+/* ROWS */
+tr:nth-child(even) {
+  background: #f9fafb;
+}
+
+tr:hover {
+  background: #f1f5f9;
+}
+
+/* TEXT */
+.truncate {
+  max-width: 250px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.status-text {
+  text-align: center;
+  padding: 20px;
+  color: #64748b;
+}
+
+.error-text {
+  color: #dc2626;
+  text-align: center;
+  font-weight: 500;
+}
+
+/* BADGES */
+.badge {
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.badge.known {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.badge.unknown {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+/* BUTTONS */
+button {
+  padding: 8px 12px;
+  border: none;
+  background: #2563eb;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+button:hover {
+  background: #1d4ed8;
+}
+
+button:disabled {
+  background: #94a3b8;
+  cursor: not-allowed;
+}
+
+/* PAGINATION */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+  gap: 12px;
+}
+
+.page-number {
+  font-weight: bold;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .sidebar {
+    display: none;
+  }
+
+  .charts {
+    flex-direction: column;
+  }
+
+  .cards {
+    flex-direction: column;
+  }
+
+  table {
+    min-width: 100%;
+  }
+}
